@@ -1,0 +1,8 @@
+name: Cosmetic-X
+main: cosmeticx.client.CosmeticX
+version: 1.0
+authors:
+  - xxArox
+  - BauboLP
+description: Cool cosmetic plugin for MCBE
+website: www.cosmetic-x.de
