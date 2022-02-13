@@ -75,6 +75,7 @@ public class CosmeticX extends PluginBase {
     public void onEnable() {
         this.getServer().getCommandMap().register(getDescription().getName(), command = new CosmeticXCommand());
         registerPermissions();
+        initListener();
         this.check();
     }
 
