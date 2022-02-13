@@ -30,11 +30,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: "Create Release"
-      run: |
-         zip -r target/${{ steps.metadata.outputs.NAME }}-classes.zip target/classes/* README.md LICENSE
-         zip -r target/${{ steps.metadata.outputs.NAME }}-source.zip src/* pom.xml README.md LICENSE
-         echo "done!"
-
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
