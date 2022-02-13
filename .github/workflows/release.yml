@@ -22,9 +22,9 @@ jobs:
     - name: "Get data"
       id: metadata
       run: |
-        echo ::set-output name=VERSION::$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"])[0])[0];')
-        echo ::set-output name=FULL_VERSION::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"];')
-        echo ::set-output name=NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["name"];')
+        echo ::set-output name=VERSION::$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/main/resources/plugin.yml")["version"])[0])[0];')
+        echo ::set-output name=FULL_VERSION::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR .                      "src/main)/resources/plugin.yml")["version"];')
+        echo ::set-output name=NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR .                              "src/main/resources/plugin.yml")["name"];')
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
