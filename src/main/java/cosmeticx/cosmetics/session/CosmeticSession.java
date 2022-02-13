@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Jan Sohn
+ * All rights reserved.
+ * This plugin is under GPL license
+ */
+
 package cosmeticx.cosmetics.session;
 
 import cn.nukkit.Player;
