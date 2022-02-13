@@ -16,8 +16,6 @@ public class CosmeticX extends PluginBase {
 
     public static CosmeticX instance;
 
-    public static final String PREFIX = TextFormat.DARK_PURPLE + "§lCosmetic" + TextFormat.WHITE + "X " + TextFormat.RESET;
-
     private static String PROTOCOL = "https";
     private static String URL = "cosmetic-x.de";
     static String URL_API;
@@ -45,7 +43,7 @@ public class CosmeticX extends PluginBase {
         try {
             token = file_get_contents("TOKEN.txt");
         } catch (IOException e) {
-            this.getLogger().error("Token cannot be read :/");
+            this.getLogger().error("Token cannot be read");
             this.getPluginLoader().disablePlugin(this);
         }
 
@@ -92,8 +90,7 @@ public class CosmeticX extends PluginBase {
         return instance;
     }
 
-    private String file_get_contents(String filename) throws IOException
-    {
+    private String file_get_contents(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         StringBuilder builder = new StringBuilder();
         String line;

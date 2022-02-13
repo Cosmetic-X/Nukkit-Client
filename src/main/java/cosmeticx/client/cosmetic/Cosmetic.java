@@ -1,7 +1,5 @@
 package cosmeticx.client.cosmetic;
 
-import java.util.UUID;
-
 public class Cosmetic {
 
     public String id;
@@ -35,4 +33,8 @@ public class Cosmetic {
     public boolean isSlot() {
         return !isPublic;
     }
+}
+enum CosmeticState {
+    PUBLIC,
+    SLOT
 }
