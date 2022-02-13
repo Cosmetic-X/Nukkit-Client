@@ -1,5 +1,5 @@
 name: Cosmetic-X
-main: cosmeticx.client.CosmeticX
+main: CosmeticX
 version: 1.0
 authors:
   - xxArox
