@@ -11,6 +11,6 @@ public class MenuSubCommand extends PlayerSubCommand {
     }
 
     public void execute(CommandSender sender, String[] args) {
-        //todo: send cosmetic menu form
+        //todo: send cosmetics menu form
     }
 }

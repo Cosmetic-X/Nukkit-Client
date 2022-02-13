@@ -1,4 +1,4 @@
-package cosmeticx.cosmetic;
+package cosmeticx.cosmetics;
 
 public class Cosmetic {
 

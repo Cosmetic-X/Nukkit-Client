@@ -2,8 +2,8 @@ name: "Cosmetic-X"
 authors:
   - "BauboLP"
   - "xxAROX"
-website: "https://cosmetic-x.de/"
-version: "0.1"
+website: "https://cosmetics-x.de/"
+version: "0.1+dev"
 description: "Cosmetic-X client"
 
 main: cosmeticx.CosmeticX

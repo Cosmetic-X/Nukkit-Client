@@ -1,3 +1,3 @@
-package cosmeticx.api;
+package cosmeticx.utils;
 
 public class ApiError extends Exception{}

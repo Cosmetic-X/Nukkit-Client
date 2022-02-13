@@ -1,4 +1,4 @@
-package cosmeticx.api;
+package cosmeticx;
 
 import java.util.HashMap;
 

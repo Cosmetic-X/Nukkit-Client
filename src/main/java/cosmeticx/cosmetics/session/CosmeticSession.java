@@ -1,4 +1,4 @@
-package cosmeticx.cosmetic.session;
+package cosmeticx.cosmetics.session;
 
 import cn.nukkit.Player;
 

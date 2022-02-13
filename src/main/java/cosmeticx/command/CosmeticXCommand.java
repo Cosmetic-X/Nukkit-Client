@@ -19,13 +19,13 @@ public class CosmeticXCommand extends Command {
 
     public CosmeticXCommand() {
         super("cosmeticx", "Cosmetic-X command", "§cUsage: §7/cosmeticx help", new String[]{"cx"});
-        setPermission("cosmetic-x.command");
+        setPermission("cosmetics-x.command");
         loadSubCommand(new HelpSubCommand("help", "Help sub-command.", new String[]{"?"}));
         loadSubCommand(new InfoSubCommand("info", "Info sub-command.", new String[]{"i"}));
         loadSubCommand(new ReloadSubCommand("reload", "Reload sub-command.", new String[]{"rl"}));
-        loadSubCommand(new MenuSubCommand("menu", "Shows public cosmetic menu.", new String[]{"public"}));
-        loadSubCommand(new SlotCosmeticsMenuSubCommand("slot", "Shows slot cosmetic menu.", new String[]{"server"}));
-        //loadSubCommand(new EncodeCommand("slot", "Shows slot cosmetic menu.", new String[]{"server"}));// NOTE: This command is dev-only
+        loadSubCommand(new MenuSubCommand("menu", "Shows public cosmetics menu.", new String[]{"public"}));
+        loadSubCommand(new SlotCosmeticsMenuSubCommand("slot", "Shows slot cosmetics menu.", new String[]{"server"}));
+        //loadSubCommand(new EncodeCommand("slot", "Shows slot cosmetics menu.", new String[]{"server"}));// NOTE: This command is dev-only
         loadSubCommand(new PermissionsSubCommand("permissions", "Shows all permissions.", new String[]{"perms"}));
     }
 
