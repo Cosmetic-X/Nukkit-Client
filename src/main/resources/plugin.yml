@@ -3,7 +3,7 @@ authors:
   - "BauboLP"
   - "xxAROX"
 website: "https://cosmetic-x.de/"
-version: "0.1"
+version: "0.1+dev"
 description: "Cosmetic-X client"
 
 main: cosmeticx.CosmeticX
