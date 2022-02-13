@@ -23,4 +23,12 @@ public class Utils {
         reader.close();
         return builder.toString();
     }
+
+    public static String encodeSkinData(byte[] skinData){
+        return ""; // TODO: this should return png file contents
+    }
+
+    public static byte[] decodeSkinData(String raw){
+        return new byte[0]; // TODO: this should use png file contents and convert it to byte array
+    }
 }

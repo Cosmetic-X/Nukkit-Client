@@ -7,7 +7,6 @@ on:
 
 jobs:
   dev-release:
-
     name: "Create Dev-Release"
     runs-on: "ubuntu-latest"
 
