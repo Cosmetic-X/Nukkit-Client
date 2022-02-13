@@ -24,14 +24,15 @@ jobs:
       run: |
         echo ::set-output name=VERSION::$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"])[0])[0];')
         echo ::set-output name=FULL_VERSION::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"];')
-        echo ::set-output name=FILE_NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["name"];')
+        echo ::set-output name=NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["name"];')
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
     - name: "Create Release"
       run: |
-         #zip -r ${{ steps.metadata.outputs.FILE_NAME }}.zip ${{ steps.metadata.outputs.FOLDER }}/*
+         zip -r target/${{ steps.metadata.outputs.NAME }}-classes.zip target/classes/* README.md LICENSE
+         zip -r target/${{ steps.metadata.outputs.NAME }}-source.zip src/* pom.xml README.md LICENSE
          echo "done!"
 
     - uses: "marvinpinto/action-automatic-releases@latest"
