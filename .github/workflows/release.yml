@@ -31,8 +31,8 @@ jobs:
 
     - name: "Create Release"
       run: |
-         # TODO: make target/**/*.class files to ${{ steps.metadata.outputs.NAME }}-classes.zip
-         # TODO: make src/** files to ${{ steps.metadata.outputs.NAME }}.zip
+         zip -r target/${{ steps.metadata.outputs.NAME }}-classes.zip target/classes/* README.md LICENSE
+         zip -r target/${{ steps.metadata.outputs.NAME }}-source.zip src/* pom.xml README.md LICENSE
          echo "done!"
 
     - uses: "marvinpinto/action-automatic-releases@latest"
