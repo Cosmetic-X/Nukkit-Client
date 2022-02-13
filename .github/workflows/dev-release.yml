@@ -7,17 +7,19 @@ on:
 
 jobs:
   dev-release:
+
     name: "Create Dev-Release"
     runs-on: "ubuntu-latest"
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Set up JDK 11
       uses: actions/setup-java@v2
       with:
         java-version: '11'
         distribution: 'adopt'
-
 
     - name: "Get data"
       id: metadata
@@ -26,7 +28,7 @@ jobs:
         echo ::set-output name=FULL_VERSION::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR .                      "src/main)/resources/plugin.yml")["version"];')
         echo ::set-output name=NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR .                              "src/main/resources/plugin.yml")["name"];')
 
-    - name: Build with Maven
+    - name: "Build with Maven"
       run: mvn -B package --file pom.xml
 
     - name: "Create Development Release"
@@ -38,4 +40,3 @@ jobs:
           title: "Development Release v${{ steps.metadata.outputs.VERSION }}"
           files: |
             target/*.jar
-            target/*.zip
