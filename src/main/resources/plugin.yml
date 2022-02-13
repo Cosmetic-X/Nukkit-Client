@@ -4,6 +4,6 @@ authors:
   - "xxAROX"
 website: "https://cosmetics-x.de/"
 version: "0.1+dev"
-description: "Cosmetic-X client"
+description: "Cosmetic-X client for Nukkit"
 
 main: cosmeticx.CosmeticX
