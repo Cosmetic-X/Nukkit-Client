@@ -19,18 +19,28 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - name: "Get data"
+      id: metadata
+      run: |
+        echo ::set-output name=VERSION::$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"])[0])[0];')
+        echo ::set-output name=FULL_VERSION::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["version"];')
+        echo ::set-output name=NAME::$(php -r 'echo yaml_parse_file(getcwd() . DIRECTORY_SEPARATOR . "src/$(echo ${GITHUB_REF#refs/heads/})/resources/plugin.yml")["name"];')
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
     - name: "Create Release"
       run: |
+         # TODO: make target/**/*.class files to ${{ steps.metadata.outputs.NAME }}-classes.zip
+         # TODO: make src/** files to ${{ steps.metadata.outputs.NAME }}.zip
          echo "done!"
 
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest" #${{ github.ref }}
+          automatic_release_tag: "latest"
           prerelease: true
-          title: "Stable release"
+          title: "Release v${{ steps.metadata.outputs.VERSION }}"
           files: |
             target/*.jar
+            target/*.zip
