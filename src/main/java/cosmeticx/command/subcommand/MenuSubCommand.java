@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Jan Sohn
+ * All rights reserved.
+ * This plugin is under GPL license
+ */
+
 package cosmeticx.command.subcommand;
 
 import cn.nukkit.command.Command;
@@ -11,6 +17,6 @@ public class MenuSubCommand extends PlayerSubCommand {
     }
 
     public void execute(CommandSender sender, String[] args) {
-        //todo: send cosmetic menu form
+        //todo: send cosmetics menu form
     }
 }

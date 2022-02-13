@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Jan Sohn
+ * All rights reserved.
+ * This plugin is under GPL license
+ */
+
 package cosmeticx.utils;
 
 import java.io.BufferedReader;

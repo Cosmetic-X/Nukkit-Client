@@ -1,15 +1,18 @@
+/*
+ * Copyright (c) Jan Sohn
+ * All rights reserved.
+ * This plugin is under GPL license
+ */
+
 package cosmeticx;
 
 import cn.nukkit.permission.Permission;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
-import cosmeticx.api.ApiRequest;
 import cosmeticx.command.CosmeticXCommand;
 import cosmeticx.command.SubCommand;
 import cosmeticx.utils.Utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -19,7 +22,7 @@ public class CosmeticX extends PluginBase {
     public static CosmeticX instance;
 
     private static String PROTOCOL = "https";
-    private static String URL = "cosmetic-x.de";
+    private static String URL = "cosmetics-x.de";
     static String URL_API;
     private static int REFRESH_INTERVAL_TICKS = 1800;
 
@@ -64,7 +67,7 @@ public class CosmeticX extends PluginBase {
 
     private void registerPermissions() {
         ArrayList<Permission> permissions = new ArrayList<>();
-        Permission overlord = new Permission("cosmetic-x.*", "Overlord permission");
+        Permission overlord = new Permission("cosmetics-x.*", "Overlord permission");
         for (SubCommand subCommand : command.getSubCommands().values()) {
             if (subCommand.getPermission() != null) {
                 permissions.add(new Permission(command.getPermission() + "." + subCommand.getPermission(), "Allows to use '/" + command.getName() + " " + subCommand.getName() + "' command.", Permission.DEFAULT_OP));

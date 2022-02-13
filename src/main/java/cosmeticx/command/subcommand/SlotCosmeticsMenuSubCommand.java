@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Jan Sohn
+ * All rights reserved.
+ * This plugin is under GPL license
+ */
+
 package cosmeticx.command.subcommand;
 
 import cn.nukkit.command.CommandSender;
@@ -9,6 +15,6 @@ public class SlotCosmeticsMenuSubCommand extends PlayerSubCommand {
     }
 
     public void execute(CommandSender sender, String[] args) {
-        //todo: send private cosmetic menu form
+        //todo: send private cosmetics menu form
     }
 }
