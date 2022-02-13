@@ -6,16 +6,20 @@
 
 package cosmeticx.cosmetics;
 
+import cosmeticx.utils.Image;
+
 public class Cosmetic {
 
-    public String id;
-    public String name;
-    public String display_name;
+    private String id;
+    private String name;
+    private String display_name;
+    private Image image;
     private boolean isPublic;
 
-    public Cosmetic(String name, String display_name, String id, CosmeticState state) {
+    public Cosmetic(String name, String display_name, String id, CosmeticState state, Image image) {
         this.id = id;
         this.name = name;
+        this.image = image;
         this.display_name = display_name;
         this.isPublic = state == CosmeticState.PUBLIC;
     }
@@ -36,11 +40,9 @@ public class Cosmetic {
         return isPublic;
     }
 
+    public Image getImage() { return image; }
+
     public boolean isSlot() {
         return !isPublic;
     }
-}
-enum CosmeticState {
-    PUBLIC,
-    SLOT
 }

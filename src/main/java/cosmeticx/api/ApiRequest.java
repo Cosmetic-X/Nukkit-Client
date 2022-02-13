@@ -4,14 +4,14 @@
  * This plugin is under GPL license
  */
 
-package cosmeticx;
+package cosmeticx.api;
 
 import java.util.HashMap;
 
 public class ApiRequest {
 
-    private HashMap<String, String> headers;
-    private HashMap<String, String> body;
+    private final HashMap<String, String> headers;
+    private final HashMap<String, String> body;
     private final boolean post_method;
 
     private final String URL;

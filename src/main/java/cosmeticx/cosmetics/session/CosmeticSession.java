@@ -4,7 +4,7 @@
  * This plugin is under GPL license
  */
 
-package cosmeticx.cosmetics;
+package cosmeticx.cosmetics.session;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 @Getter
 public final class CosmeticSession {
     private final String username;
-    private final Skin legacySkin;
+    private Skin legacySkin;
     private Player holder;
     private HashMap<Integer, String> activeCosmetics = new HashMap<>();
 
@@ -42,5 +42,13 @@ public final class CosmeticSession {
         skin.setSkinData(Utils.decodeSkinData(buffer));
         skin.setGeometryName(geometry_name);
         getHolder().setSkin(skin);
+    }
+
+    public void setLegacySkin(Skin legacySkin) {
+        this.legacySkin = legacySkin;
+    }
+
+    public Skin getLegacySkin() {
+        return legacySkin;
     }
 }

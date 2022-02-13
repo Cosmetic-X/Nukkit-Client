@@ -6,8 +6,6 @@
 
 package cosmeticx.command;
 
-import cn.nukkit.command.CommandSender;
-
 abstract public class PlayerSubCommand extends SubCommand{
     public PlayerSubCommand(String name, String description, String[] aliases) {
         super(name, description, aliases);

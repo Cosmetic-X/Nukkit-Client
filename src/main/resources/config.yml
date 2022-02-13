@@ -1,5 +1,6 @@
 # Don't touch this config
 protocol: "http"
-host: "localhost"
-port: 20085
+host: "cosmetic-x.de"
+port: ~
 refresh-interval: 1800
+auto-update: true

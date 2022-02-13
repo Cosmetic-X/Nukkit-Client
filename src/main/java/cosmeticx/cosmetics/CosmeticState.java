@@ -4,6 +4,9 @@
  * This plugin is under GPL license
  */
 
-package cosmeticx.utils;
+package cosmeticx.cosmetics;
 
-public class ApiError extends Exception{}
+public enum CosmeticState {
+    PUBLIC,
+    SLOT
+}
